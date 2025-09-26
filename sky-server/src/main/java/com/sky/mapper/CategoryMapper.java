@@ -8,6 +8,7 @@ import com.sky.enumeration.OperationType;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -24,4 +25,7 @@ public interface CategoryMapper {
     void updateCategory(Category category);
 
     List<Category> pageQuery(CategoryPageQueryDTO categoryPageQueryDTO);
+
+    @Select("select * from category where type=#{type} and status=#{status}")
+    List<Category> list(Category category);
 }

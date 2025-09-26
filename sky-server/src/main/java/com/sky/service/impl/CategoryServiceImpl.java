@@ -86,9 +86,11 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<Category> list(Integer type) {
-        CategoryPageQueryDTO categoryPageQueryDTO=new CategoryPageQueryDTO();
-        categoryPageQueryDTO.setType(type);
-        List<Category> categoryList = categoryMapper.pageQuery(categoryPageQueryDTO);
+        Category category = Category.builder()
+                        .type(type)
+                        .status(StatusConstant.ENABLE)
+                        .build();
+        List<Category> categoryList = categoryMapper.list(category);
         return categoryList;
     }
 }
