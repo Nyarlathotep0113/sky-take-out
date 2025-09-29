@@ -31,4 +31,6 @@ public interface SetmealMapper {
 
     @AutoFill(com.sky.enumeration.OperationType.UPDATE)
     void update(Setmeal setmeal);
+
+    List<Setmeal> list(Setmeal setmeal);
 }
