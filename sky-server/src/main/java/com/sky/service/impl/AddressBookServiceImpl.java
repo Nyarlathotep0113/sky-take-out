@@ -19,8 +19,7 @@ public class AddressBookServiceImpl implements AddressBookService {
     /**
      * 条件查询
      *
-     * @param addressBook
-     * @return
+     * @param addressBook     * @return
      */
     public List<AddressBook> list(AddressBook addressBook) {
         return addressBookMapper.list(addressBook);
